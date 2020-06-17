@@ -157,7 +157,7 @@ TG频道:@meetashare
 
 
 const address = "&location=auto_ip";//自动定位填 auto_ip , 精确定位填入 经纬度.
-const k = "&key=填这里";//和风天气APIkey,可自行前往 https://dev.heweather.com/ 进行获取(注意key类型选WebApi)
+const k = "&key=d5cd5c370e384e4fb96e19e35b8619af";//和风天气APIkey,可自行前往 https://dev.heweather.com/ 进行获取(注意key类型选WebApi)
 
 const wea = "https://free-api.heweather.net/s6/weather/now?"+address+k;
 const forecast = "https://widget-api.heweather.net/s6/plugin/sticker?key=acd0fdcab4b9481a98d0f59145420fac&location="+$persistentStore.read("cid")+"&lang=zh";
@@ -167,7 +167,7 @@ const lifestyle = "https://free-api.heweather.net/s6/weather/lifestyle?"+address
 $httpClient.get(wea, function(error, response, data){
     if (error){
         console.log(error);
-        $done();                   
+        $done();
     } else {
         var obj = JSON.parse(data);
         //console.log(obj);
@@ -187,34 +187,34 @@ $httpClient.get(wea, function(error, response, data){
         $persistentStore.write(hum, "hum");
         $persistentStore.write(tmp, "tmp");
         $persistentStore.write(cid, "cid");
-        $done(); 
+        $done();
     }
 }
 );
-        
 
-    
+
+
 $httpClient.get(forecast, function(error, response, data){
     if (error){
         console.log(error);
-        $done();                   
+        $done();
     } else {
         var obj = JSON.parse(data);
         //console.log(obj);
         var minute_forecast = obj.rain["txt"];
         $persistentStore.write(minute_forecast, "minute_forecast");
-        $done(); 
+        $done();
     }
 }
 );
 
-        
-        
-        
+
+
+
 $httpClient.get(weaqua, function(error, response, data){
     if (error){
         console.log(error);
-        $done();                   
+        $done();
     } else {
         var obj = JSON.parse(data);
         //console.log(obj);
@@ -224,7 +224,7 @@ $httpClient.get(weaqua, function(error, response, data){
         $persistentStore.write(qlty, "qlty");
         $persistentStore.write(aqi, "aqi");
         $persistentStore.write(pm25, "pm25");
-        $done(); 
+        $done();
     }
 }
 );
@@ -234,16 +234,16 @@ $httpClient.get(weaqua, function(error, response, data){
 $httpClient.get(lifestyle, function(error, response, data){
     if (error){
         console.log(error);
-        $done();                   
+        $done();
     } else {
         var obj = JSON.parse(data);
-        //console.log(obj); 
+        //console.log(obj);
         var rng = Math.floor((Math.random()*8)+1);
         var ssd = obj.HeWeather6[0].lifestyle[0].brf;
         var life =  obj.HeWeather6[0].lifestyle[rng].txt;
         $persistentStore.write(ssd, "ssd");
         $persistentStore.write(life, "life");
-        $done(); 
+        $done();
     }
 }
 );
