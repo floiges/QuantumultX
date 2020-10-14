@@ -1,0 +1,13 @@
+[submodule "chavyleung"]
+	path = chavyleung
+	url = https://github.com/chavyleung/scripts.git
+[submodule "NobyDa"]
+	path = NobyDa
+	url = https://github.com/NobyDa/Script.git
+	branch = master
+[submodule "Neurogram-R"]
+	path = Neurogram-R
+	url = https://github.com/Neurogram-R/Surge.git
+[submodule "yichahucha"]
+	path = yichahucha
+	url = https://github.com/yichahucha/surge.git
