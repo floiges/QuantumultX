@@ -11,3 +11,6 @@
 [submodule "yichahucha"]
 	path = yichahucha
 	url = https://github.com/yichahucha/surge.git
+[submodule "lxk0301"]
+	path = lxk0301
+	url = https://github.com/lxk0301/scripts.git
